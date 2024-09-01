@@ -6,7 +6,12 @@ namespace ECommerceWebApi.Models
     {
         public string FirstName { get; set; }
         public DateTime LastName { get; set; }
-        public ICollection<Order> Orders { get; set; }
+
+        //Navigation Properties
+        public ICollection<Order> Orders { get; set; } //One to Many 
+        public ShoppingCart ShoppingCart { get; set; } //One to One
+        public ICollection<ShippingAddress> ShippingAddress { get; set; } //One to Many
+
 
 
     }
