@@ -1,4 +1,6 @@
-﻿namespace ECommerceWebApi.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ECommerceWebApi.Models
 {
     public class OrderItem
     {
@@ -9,7 +11,9 @@
         public decimal UnitPrice { get; set; }
 
         //Navigation Properties
+        [ForeignKey("OrderId")]
         public Order Order { get; set; }
+        [ForeignKey("ProductId")]
         public Product Product { get; set; }
     }
 }

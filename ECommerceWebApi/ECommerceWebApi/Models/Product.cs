@@ -13,9 +13,11 @@ namespace ECommerceWebApi.Models
         public int CategoryId { get; set; } //Foreign Key to "Categories" (Many to One)
 
         //Navigation Property
+        [ForeignKey("CategoryId")]
         public Category Category { get; set; }
-        //public ICollection<OrderItem> OrderItems { get; set; }
-
+        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<ShoppingCartItem> ShoppingCartItem { get; set; }
+    
 
 
 

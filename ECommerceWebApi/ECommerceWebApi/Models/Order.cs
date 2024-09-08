@@ -1,4 +1,6 @@
-﻿namespace ECommerceWebApi.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace ECommerceWebApi.Models
 {
     public class Order
     {
@@ -10,8 +12,12 @@
         public int ShippingAddressId { get; set; }
 
         //Navigation Properties
+        [ForeignKey("UserId")]
         public ApplicationUser User { get; set; }
+        [ForeignKey("PaymentId")]
         public Payment Payment { get; set; }//One to One 
+
+        [ForeignKey("ShippingAddressId")]
         public ShippingAddress shippingAddress { get; set; }//One to One
         public ICollection<OrderItem> OrderItems { get; set; }//One to Many
 
