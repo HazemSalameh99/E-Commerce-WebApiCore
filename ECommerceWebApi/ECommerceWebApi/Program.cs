@@ -2,6 +2,7 @@ using ECommerceWebApi.Data;
 using ECommerceWebApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
