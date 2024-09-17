@@ -1,4 +1,5 @@
 ﻿using ECommerceWebApi.Data;
+using ECommerceWebApi.DTO;
 using ECommerceWebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,6 @@ namespace ECommerceWebApi.Controllers
         public async Task<IActionResult> AllCategories()
         {
             var categories = await _context.Categories
-                .Include(c=>c.Products)
                 .ToListAsync();
             if(categories.Any())
             {
@@ -33,11 +33,44 @@ namespace ECommerceWebApi.Controllers
             if (id != null)
             {
                 var category=await _context.Categories
-                    .Include(c=>c.Products)
                     .SingleOrDefaultAsync(c=>c.CategoryId == id);
                 if(category != null)
                 {
                     return Ok(category);
+                }
+                return NotFound($"Category with ID {id} not found");
+            }
+            return BadRequest("Category ID cannot be null.");
+        }
+        [HttpGet("[Action]/{id:int}")]
+        public async Task<IActionResult> CategoryWithProductById(int? id)
+        {
+            if (id != null)
+            {
+                var category = await _context.Categories
+                    .Include(c=>c.Products)
+                    .SingleOrDefaultAsync(c => c.CategoryId == id);
+                if (category != null)
+                {
+                    CategoryDto categoryDto=new CategoryDto();
+                    categoryDto.Name= category.Name;
+                    categoryDto.Discription= category.Discription;
+                    if (category.Products.Any())
+                    {
+                        foreach (var product in category.Products)
+                        {
+                            categoryDto.Products.Add(new ProductDto
+                            {
+                                Name = product.Name,
+                                Discription = product.Discription,
+                                Price = product.Price,
+                                StockQuantity = product.StockQuantity,
+                                Image = product.Image,
+                            });
+                        }
+                        return Ok(categoryDto);
+                    }
+                    return BadRequest($"The {category.Name} is Not Contain On Products");
                 }
                 return NotFound($"Category with ID {id} not found");
             }
@@ -49,7 +82,6 @@ namespace ECommerceWebApi.Controllers
             if (!string.IsNullOrEmpty(Name))
             {
                 var Categories = await _context.Categories
-                    .Include(c => c.Products)
                     .Where(c=>c.Name.Contains(Name))
                     .ToListAsync();
                 if (Categories.Any())
@@ -61,15 +93,39 @@ namespace ECommerceWebApi.Controllers
             return BadRequest("Category name cannot be null or empty");
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(Category category)
+        public async Task<IActionResult> CreateCategory(CategoryDto categoryDto)
         {
             if(ModelState.IsValid)
             {
+                Category category = new Category
+                {
+                    Name = categoryDto.Name,
+                    Discription = categoryDto.Discription,
+                };
                 _context.Categories.Add(category);
                 await _context.SaveChangesAsync();
                 return CreatedAtAction("CategoryById", new { id = category.CategoryId }, category);
             }
             return BadRequest(ModelState);
+        }
+        [HttpDelete("{id:int}")]
+        public IActionResult DeleteCategory(int id)
+        {
+            var category = _context.Categories.SingleOrDefault(c => c.CategoryId == id);
+            if (category != null)
+            {
+                _context.Categories.Remove(category);
+                try
+                {
+                    _context.SaveChanges();
+                    return NoContent();
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+            return BadRequest($"Category with ID {id} not found");
         }
 
     }
