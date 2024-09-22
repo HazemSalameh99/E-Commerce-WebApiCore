@@ -142,3 +142,8 @@ E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\obj\Debug\net8.0
 E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\obj\Debug\net8.0\ECommerceWebApi.pdb
 E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\obj\Debug\net8.0\ECommerceWebApi.genruntimeconfig.cache
 E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\obj\Debug\net8.0\ref\ECommerceWebApi.dll
+E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\bin\Debug\net8.0\ECommerceWebApi.staticwebassets.runtime.json
+E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\WebAPI\E-Commerce-WebApiCore\ECommerceWebApi\ECommerceWebApi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

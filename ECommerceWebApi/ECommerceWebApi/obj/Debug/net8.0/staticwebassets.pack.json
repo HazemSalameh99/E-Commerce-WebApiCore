@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\WebAPI\\E-Commerce-WebApiCore\\ECommerceWebApi\\ECommerceWebApi\\wwwroot\\images\\454e7fbf-0678-4bdf-8646-1bbf876c8abd-Screenshot (276).png",
+      "PackagePath": "staticwebassets\\images\\454e7fbf-0678-4bdf-8646-1bbf876c8abd-Screenshot (276).png"
+    },
+    {
+      "Id": "E:\\WebAPI\\E-Commerce-WebApiCore\\ECommerceWebApi\\ECommerceWebApi\\wwwroot\\images\\49e4bfe9-0380-4e44-8d0d-136bc61ec4cc.png",
+      "PackagePath": "staticwebassets\\images\\49e4bfe9-0380-4e44-8d0d-136bc61ec4cc.png"
+    },
+    {
+      "Id": "E:\\WebAPI\\E-Commerce-WebApiCore\\ECommerceWebApi\\ECommerceWebApi\\wwwroot\\images\\a86a3acf-4da7-4269-ac65-a6bbd39ecb2a-Screenshot (276).png",
+      "PackagePath": "staticwebassets\\images\\a86a3acf-4da7-4269-ac65-a6bbd39ecb2a-Screenshot (276).png"
+    },
+    {
+      "Id": "E:\\WebAPI\\E-Commerce-WebApiCore\\ECommerceWebApi\\ECommerceWebApi\\wwwroot\\images\\ff11836c-ef85-429d-b088-1c3faa0a4d0c_Screenshot (282).png",
+      "PackagePath": "staticwebassets\\images\\ff11836c-ef85-429d-b088-1c3faa0a4d0c_Screenshot (282).png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ECommerceWebApi.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ECommerceWebApi.props",
+      "PackagePath": "build\\ECommerceWebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ECommerceWebApi.props",
+      "PackagePath": "buildMultiTargeting\\ECommerceWebApi.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ECommerceWebApi.props",
+      "PackagePath": "buildTransitive\\ECommerceWebApi.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

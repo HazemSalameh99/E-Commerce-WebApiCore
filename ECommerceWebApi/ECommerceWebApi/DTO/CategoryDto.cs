@@ -1,4 +1,6 @@
 ﻿using ECommerceWebApi.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Runtime.Serialization;
 
 namespace ECommerceWebApi.DTO
 {

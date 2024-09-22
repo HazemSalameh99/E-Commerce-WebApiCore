@@ -108,6 +108,27 @@ namespace ECommerceWebApi.Controllers
             }
             return BadRequest(ModelState);
         }
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> EditCategory(int? id, CategoryDto categoryDto)
+        {
+            if (id == null)
+            {
+                return NotFound(string.Empty);
+            }
+            if (ModelState.IsValid)
+            {
+                var category = _context.Categories.Find(id);
+                if (category != null)
+                {
+                    category.Name = categoryDto.Name;
+                    category.Discription = categoryDto.Discription;
+                    await _context.SaveChangesAsync();
+                    return CreatedAtAction("CategoryById", new { id = category.CategoryId }, category);
+                }
+                return NotFound($"Category with ID {id} not found");
+            }
+            return BadRequest(ModelState);
+        }
         [HttpDelete("{id:int}")]
         public IActionResult DeleteCategory(int id)
         {
